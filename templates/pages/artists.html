@@ -1,6 +1,7 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Fyyur | Artists{% endblock %}
 {% block content %}
+{% if artists %}
 <ul class="items">
 	{% for artist in artists %}
 	<li>
@@ -13,4 +14,7 @@
 	</li>
 	{% endfor %}
 </ul>
+{% else %}
+<h2>No such recors of artists!</h2>
+{% endif %}
 {% endblock %}

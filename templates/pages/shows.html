@@ -2,6 +2,7 @@
 {% block title %}Fyyur | Shows{% endblock %}
 {% block content %}
 <div class="row shows">
+    {% if shows %}
     {% for show in shows %}
     <div class="col-sm-4">
         <div class="tile tile-show">
@@ -13,5 +14,8 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <h2>No such recors of shows!</h2>
+    {% endif %}
 </div>
 {% endblock %}

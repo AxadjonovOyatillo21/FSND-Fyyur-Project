@@ -10,4 +10,12 @@ DEBUG = True
 
 
 # TODO IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = '<dialect>://<username>:<password>@<host>:<port>/<dbname>'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:<password>@localhost:5432/fyyur'
+SQLALCHEMY_TRACK_MODIFICATIONS = False 
+# SQLALCHEMY_ECHO = True
+WTF_CSRF_ENABLED = False
+
+# If you give error: ERROR [flask_migrate] Error: Target database is not up to date when yo connecting your local database using flask migrate try this commands:
+# flask db stamp head
+# flask db migrate
+# flask db upgrade

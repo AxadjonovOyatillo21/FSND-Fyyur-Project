@@ -60,10 +60,12 @@ p.lead {
   background-color: white;
 }
 .navbar-nav .search {
-  margin-top: 6px;
+  display: flex;
   width: 300px;
+  margin-top: 6px;
   margin-right: 15px;
 }
+
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.active>a {
     background: none;
     box-shadow: none;
@@ -71,13 +73,29 @@ p.lead {
     font-weight: bold;
 }
 .navbar-nav .search input {
-  border-radius: 50px;
+  width: 70%;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
   background: #f2f2f2;
   border: none;
+  border-right: 1px solid #e2e2e2;
   box-shadow: none;
   padding-left: 18px;
   padding-right: 18px;
   font-size: 1.4rem;
+}
+
+.navbar-nav .search  select {
+  width: 30%;
+  background: #f2f2f2;
+  border: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: none;
+  padding-left: 18px;
+  padding-right: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .btn-default {

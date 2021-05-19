@@ -8,17 +8,49 @@
         <label for="artist_id">Artist ID</label>
         <small>ID can be found on the Artist's Page</small>
         {{ form.artist_id(class_ = 'form-control', autofocus = true) }}
+        <br>
+        <h4>I help you to find: </h4>
+        <ul class="items">
+          {% for artist in data[0] %}
+            <li>
+              <a href="/artists/{{ artist.id }}">
+                <i class="fas fa-users"></i> 
+                <div class="item">
+                  <h5>{{ artist.name }} <b>ID:</b> {{ artist.id }}</h5>
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="form-group">
         <label for="venue_id">Venue ID</label>
         <small>ID can be found on the Venue's Page</small>
         {{ form.venue_id(class_ = 'form-control', autofocus = true) }}
+        <br>
+        <h4>I help you to find: </h4>
+        {% if data[-1] %}
+        <ul class="items">
+          {% for venue in data[1] %}
+            <li>
+              <a href="/venues/{{ venue.id }}">
+                <i class="fas fa-users"></i> 
+                <div class="item">
+                  <h5>{{ venue.name }} <b>ID:</b> {{ venue.id }}</h5>
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <h4>Venues not found :(</h4>
+        {% endif %}
       </div>
       <div class="form-group">
           <label for="start_time">Start Time</label>
           {{ form.start_time(class_ = 'form-control', placeholder='YYYY-MM-DD HH:MM', autofocus = true) }}
         </div>
-      <input type="submit" value="Create Venue" class="btn btn-primary btn-lg btn-block">
+      <input type="submit" value="Create Show" class="btn btn-primary btn-lg btn-block">
     </form>
   </div>
 {% endblock %}
